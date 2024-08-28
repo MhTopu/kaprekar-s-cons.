@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+<body>
+    <py-script>
+        con = 495
+
+
+        def num(a):
+            max1 = ''.join(sorted(a, reverse=True))
+            min1 = ''.join(sorted(a))
+            return max1, min1
+    
+    
+        for i in range(100, 1000):
+            final = i
+            n = 0
+            test = ""
+            while con != final:
+                maxNum = int(num(str(final))[0])
+                minNum = int(num(str(final))[1])
+                if maxNum != minNum:
+                    final = maxNum - minNum
+                    n += 1
+                else:
+                    test = "Note: code break impossible"
+                    break
+    
+            print(f"{i} => {n}; {test}")
+    </py-script>
+    
+</body>
+</html>
